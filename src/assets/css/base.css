@@ -1,0 +1,52 @@
+@import "./normalize.css";
+:root {
+    --colot-text: #666;
+    --colot-high-text: #ff5777;
+    --colot-tint: #ff8198;
+    --font-size:14px;
+    --line-heigh:1.5;
+
+}
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Helvetica Neue",Hevetica,"PingFang SC","Hiragio Sans GB","MicrosoftYaHei","微软雅黑",Arial,sans-serif;
+    user-select: select none;
+    -webkit-tap-higlight-color:transparent;
+    background:var(--color-text);
+    color:var(--color-text);
+    width:100vw;
+}
+
+a{
+    color:var(--color-text);
+    text-decoration:none;
+}
+.clear-fix::after{
+    clear:both;
+    content:'';
+    display:block;
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
+
+.clear-fix{
+    zoom: 1;
+
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float:right;
+}

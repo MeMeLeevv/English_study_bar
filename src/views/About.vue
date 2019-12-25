@@ -1,5 +1,28 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <div id="about">
+    <sectioninfoPreview hollWidth="1000"></sectioninfoPreview>
+    </div>
 </template>
+
+<script>
+import sectioninfoPreview from './sectioninfoPreview'
+
+export default {
+  name: 'about',
+  data () {
+    return {
+    }
+  },
+  created () {},
+  computed: {
+  },
+  components: {
+    sectioninfoPreview
+  },
+  methods: {
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+</style>

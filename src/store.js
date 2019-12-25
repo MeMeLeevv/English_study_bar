@@ -9,13 +9,11 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {// 初始化状态设置要全局访问的state对象
-    activites: [],
-    items: [],
-    inspire: [],
-    banner: [],
-    video: [],
     indexMsgReady: false,
-    demoNumber: 0
+    demoNumber: 0,
+    screenWidth: 0,
+    userData: {},
+    lastPath: '' // 登录成功后返回原来的path
   },
   getters: {// 来实时监听state值的变化(最新状态)
     getIndexMsgReady (state) {
@@ -24,44 +22,28 @@ export default new Vuex.Store({
     changedDemoNumber (state) {
       return state.demoNumber
     },
-    getActivites (state) {
-      return state.activites
+    getScreenWidth (state) {
+      return state.screenWidth
     },
-    getBanner (state) {
-      return state.banner
+    getUserData (state) {
+      return state.userData
     },
-    getItems (state) {
-      return state.items
-    },
-    getVideo (state) {
-      return state.video
-    },
-    getInspire (state) {
-      return state.inspire
+    getLastPath (state) {
+      return state.lastPath
     }
   },
   mutations: {// 一个对像可以放改变state初始值的方法，也可以进行改变state里的值
+    setScreenWidth (state, width) {
+      state.screenWidth = width
+    },
     setIndexMsgReady (state) {
       state.indexMsgReady = true
     },
-    newNum (state, sum) {
-      state.demoNumber += sum
+    setUserData (state, value) {
+      state.userData = value
     },
-    setActivites (state, activites) {
-      state.activites = activites
-      console.log('设置成功')
-    },
-    setBanner (state, banner) {
-      state.banner = banner
-    },
-    setVideo (state, video) {
-      state.video = video
-    },
-    setItems (state, items) {
-      state.items = items
-    },
-    setInspire (state, inspire) {
-      state.inspire = inspire
+    setLastPath (state, value) {
+      state.lastPath = value
     }
   },
   actions: {// 这个actions也是个对象变量，最大的作用就是里面的action方法 可以包含任意多个异步操作
