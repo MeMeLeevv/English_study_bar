@@ -41,6 +41,6 @@
     "sass": "^1.18.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10",
-    "ws": "^7.1.2"
+    "ws": "^7.4.6"
   }
 }
